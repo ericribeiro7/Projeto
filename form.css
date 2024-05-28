@@ -31,7 +31,7 @@ body, html {
 .verde {
     height: 100%;
     width: 40%;
-    background-color: #00FFB2;
+    background-color: #018a61;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,10 +52,35 @@ body, html {
     margin-bottom: 20px;
 }
 
+
+.verde2 {
+    height: 100%;
+    width: 40%;
+    background-color: #018a61;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    border-radius: 0px 20px 20px 0px;
+}
+
+.verde2 h1 {
+    font-weight: 900;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.verde2 p {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
 .botao {
     width: 145px;
     height: 40px;
-    background-color: #00FFB2;
+    background-color: #018a61;
     border: 1px solid #fff;
     border-radius: 10px;
     display: flex;
@@ -94,7 +119,7 @@ body, html {
 
 .form input {
     border: none;
-    border-bottom: 2px solid #00FFB2;
+    border-bottom: 2px solid #018a61;
     padding: 10px 0;
     margin-bottom: 20px;
     outline: none;
@@ -103,7 +128,7 @@ body, html {
 
 .form select {
     border: none;
-    border-bottom: 2px solid #00FFB2;
+    border-bottom: 2px solid #018a61;
     padding: 10px 0;
     margin-bottom: 20px;
     outline: none;
@@ -116,7 +141,7 @@ body, html {
 .botao {
     width: 145px;
     height: 40px;
-    background-color: #00FFB2;
+    background-color: #018a61;
     border: 1px solid #fff;
     border-radius: 10px;
     display: flex;
