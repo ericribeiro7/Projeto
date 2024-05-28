@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -6,7 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="pagina2.css">
+    <link rel="stylesheet" href="form.css">
     <title>Sistema de Pontos</title>
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/dinpro');
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -16,6 +31,62 @@
             <button class="botton">FAÇA PARTE</button>
         </navbar>
     </header>
+
+    <div class="overlay" id="login-overlay">
+        <div class="registro">
+            <div class="caixa">
+                <div class="verde">
+                    <h1>OLÁ AMIGO</h1>
+                    <p>Se já possui uma conta, clique aqui</p>
+                    <button class="botao" onclick="toggleView('login')">INICIAR SESSÃO</button>
+                </div>
+                <div class="caixa2">
+                    <span class="close" onclick="closeOverlay()" style="color: #000;">×</span>
+                    <h2 class="textinho">REGISTRE-SE AQUI</h2>
+                    <form class="form" action="register.php" method="POST">
+                        <input type="text" name="nome" placeholder="Nome" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="password" name="senha" placeholder="Senha" required>
+                        <select name="tipo_conta" required>
+                            <option value="" disabled selected>Tipo de Conta</option>
+                            <option value="doador">Doador</option>
+                            <option value="receptor">Receptor</option>
+                        </select>
+                        <button class="botao" type="submit">REGISTRAR</button>
+                    </form>
+                    <h2 class="textinho">OU USE SUA CONTA</h2>
+                    <div class="icons">
+                        <i class='bx bxl-facebook'></i>
+                        <i class='bx bxl-google'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="login" style="display: none;">
+            <div class="caixa">
+                <div class="caixa2">
+                    <span class="close" onclick="closeOverlay()">×</span>
+                    <h2 class="textinho">ENTRAR NA SUA CONTA</h2>
+                    <form class="form" action="login.php" method="POST">
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="password" name="senha" placeholder="Senha" required>
+                        <button class="botao" type="submit">ENTRAR</button>
+                    </form>
+                    <h2 class="textinho">OU USE SUA CONTA</h2>
+                    <div class="textinho">
+                        <i class='bx bxl-facebook' style="font-size: 18px;"></i>
+                        <i class='bx bxl-google' style="font-size: 18px;"></i>
+                    </div>
+                </div>
+                <div class="verde2">
+                    <h1>COMECE SUA JORNADA AGORA</h1>
+                    <p>Se não possui uma conta, una-se a nós agora.</p>
+                    <button class="botao" onclick="toggleView('registro')">REGISTRE-SE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="menu" id="menu">
         <div class="links">
             <nav>
@@ -153,162 +224,26 @@
             <h4>Copyright 2024 DOAEXPRESS, Todos os Direitos Reservados.</h4>
         </div>
 </footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function showLoginForm() {
+        document.getElementById('login-overlay').style.display = 'flex';
+    }
+
+    function closeOverlay() {
+        document.getElementById('login-overlay').style.display = 'none';
+    }
+
+    function toggleView(view) {
+        if (view === 'login') {
+            document.querySelector('.registro').style.display = 'none';
+            document.querySelector('.login').style.display = 'block';
+        } else if (view === 'registro') {
+            document.querySelector('.login').style.display = 'none';
+            document.querySelector('.registro').style.display = 'block';
+        }
+    }
+</script>
 </body>
-=======
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="pagina2.css">
-    <title>Sistema de Pontos</title>
-</head>
-<body>
-    <header class="header">
-        <i class='bx bx-menu' id="menu-icon"></i>
-        <a class="logo" href="#">DoaExpress</a>
-        <navbar class="navbar">
-            <button class="botton">FAÇA PARTE</button>
-        </navbar>
-    </header>
-    <div class="menu" id="menu">
-        <div class="links">
-            <nav>
-                <ul>
-                    <a href="#home"><li>INICIO</li></a>
-                    <a href="#about"><li>SOBRE A DOAEXPRESS</li></a>
-                    <a href="#services"><li>MAIS SOBRE NÓS</li></a>
-                    <a href="#portfolio"><li>NOSSOS SERVIÇOS</li></a>
-                    <a href="#contact"><li>CONTATO</li></a>
-                    <a href="#login"><li>FAÇA PARTE</li></a>
-                </ul>
-            </nav>
-        </div>
-    </div>
-
-    <section class="fixed">
-        <h2 class="heading"></h2>
-
-        <div class="fixed-container">
-            <h1>Sistema de Pontos</h1>
-
-            <h3>TODOS SAEM GANHANDO</h3>
-        </div>
-    </section>
-
-    <section class="video">
-        <div class="main-text">
-            <h3>ONDE TUDO COMEÇOU</h3>
-            <h1>Quem nós somos?</h1>
-            <p>Nós somos uma plataforma de doações dedicada a conectar generosidade e <br>
-            necessidade de maneira eficaz e acessível.
-            Em um mundo cada vez mais digital, <br>
-            oferecemos um espaço seguro e transparente para que indivíduos e <br>
-            organizações possam arrecadar fundos e apoiar causas importantes.
-            </p>
-        </div>
-
-        <div class="imgback">
-            <img src="imagens-fundo/sistema-pontos/imgback.png" alt="">
-        </div>
-    </section>
-
-    <section class="sistema-pontos">
-        <h1 class="heading">Como Funciona?</h1>
-        <div class="container">
-            <div class="box">
-                <h1>01</h1>
-                <h2>Crie Sua Conta</h2>
-                <p>Crie sua conta. É simples e rápido: clique no botão "FAÇA PARTE", preencha seus dados pessoais e pronto! Em poucos minutos, você estará pronto para explorar todas as funcionalidades que oferecemos.</p>
-            </div>
-    
-            <div class="box">
-                <h1>02</h1>
-                <h2>Faça Doações</h2>
-                <p>Depois de criar sua conta, você pode começar a fazer doações. Navegue pelas causas que apoiamos, escolha aquela que mais toca seu coração e contribua com o valor que desejar. Toda doação é segura e transparente, garantindo que sua generosidade chegue a quem realmente precisa.</p>
-            </div>
-    
-            <div class="box">
-                <h1>03</h1>
-                <h2>Junte Pontos</h2>
-                <p>A cada doação realizada, você acumula pontos em sua conta. Esses pontos são nosso jeito de agradecer por sua generosidade. Quanto mais você doa, mais pontos ganha, e esses pontos podem ser trocados por recompensas exclusivas dentro da nossa plataforma.</p>
-            </div>
-
-            <div class="box">
-                <h1>04</h1>
-                <h2>Troque seus Pontos</h2>
-                <p>Com os pontos acumulados, você pode acessar diversas recompensas. Desde descontos em parceiros até brindes especiais, há sempre algo novo para escolher. Basta acessar a seção de recompensas em sua conta e selecionar como deseja utilizar seus pontos.</p>
-            </div>
-            <button class="botton">FAÇA PARTE</button>
-        </div>
-    </section>
-    
-    <section class="troque-pontos">
-        <div class="troque">
-            <div class="text">
-                <h1>Você pode trocar seus pontos em:</h1>
-                <ul>
-                    <li>> Cupons de Descontos</li>
-                    <li>> Produtos Exclusivos</li>
-                    <li>> Experiências Únicas</li>
-                    <li>> Ingressos para Eventos</li>
-                    <li>> Vouchers para Restaurantes</li>
-                    <li>> Doações para Outras Causas</li>
-                </ul>
-            </div>
-            <div class="img">
-                <img src="imagens-fundo/sistema-pontos/fundo2.png" alt="">
-            </div>
-        </div>
-    </section>
-
-    <section class="fim">
-        <div class="container1">
-            <div class="doa">
-                <h1>DoaExpress</h1>
-                <p>Uma plataforma dedicada à <br>
-                conexão de doadores com <br>
-                aqueles que estão em <br>
-                necessidades.</p>
-                <div class="icons">
-                    <i class='bx bxl-facebook-circle'></i>
-                    <i class='bx bxl-linkedin' ></i>
-                    <i class='bx bxl-twitter' ></i>
-                    <i class='bx bxl-instagram' ></i>
-                </div>
-            </div>
-            <div class="contato">
-                <h1>Contato</h1>
-                <div class="ico">
-                    <div id="cont">
-                        <i class='bx bx-envelope' ></i>
-                        <h3>contato.doaexpress@org</h3>
-                    </div>
-                    <div id="cont">
-                        <i class='bx bx-phone' > </i>
-                        <h3>(98)XXXXX-XXXX</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="links">
-                <h1>Links Rápidos</h1>
-                <h3><a href="index.html">> Inicio</a></h3>
-                <h3><a href="pagina1.html" target="_blank">> Sobre Nossa Plataforma</a></h3>
-                <h3><a href="pagina3.html" target="_blank">> Delivery da sua Doação</a></h3>
-                <h3><a href="pagina4.html" target="_blank">> SAC</a></h3>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer1">
-            <h4>Politica de Privacidade | Termos de Uso</h4>
-        </div>
-        <div class="footer2">
-            <h4>Copyright 2024 DOAEXPRESS, Todos os Direitos Reservados.</h4>
-        </div>
-</footer>
-</body>
->>>>>>> bde64d6d9abe7023762ff7f523e4a780718ecb7a
 </html>
